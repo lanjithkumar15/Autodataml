@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Regression Result</title>
+</head>
+<body>
+    <h1>Regression Result</h1>
+    {% for data_item in data %}
+        <h2>File Name: {{ data_item.file_name }}</h2>
+        <h3>Columns: {{ data_item.columns|join:', ' }}</h3>
+        <h3>Regression Type: {{ data_item.regression_type }}</h3>
+
+        <h3>Coefficients:</h3>
+        <ul>
+            {% for coefficient in data_item.coefficients %}
+                <li>{{ coefficient }}</li>
+            {% endfor %}
+        </ul>
+
+        <h3>Intercept:</h3>
+        <ul>
+            {% for intercept in data_item.intercept %}
+                <li>{{ intercept }}</li>
+            {% endfor %}
+        </ul>
+
+        <h3>Predictions:</h3>
+        <ul>
+            {% for prediction in data_item.predictions %}
+                <li>{{ prediction }}</li>
+            {% endfor %}
+        </ul>
+
+        <img src="data:image/png;base64,{{ data_item.plot_image }}" alt="Regression Plot">
+
+    {% empty %}
+        <p>No data available.</p>
+    {% endfor %}
+</body>
+</html>

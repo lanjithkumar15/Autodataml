@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" type="text/css" href="{% static '/style1.css' %}">
+<head>
+  <title>My Colorful Webpage</title>
+</head>
+<body>
+  <header>
+    <h1>Welcome to BRAIN TECHNOLOGY</h1>
+  </header>
+
+  <div class="container">
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="{% url 'about' %}">About</a></li>
+        <li><a href="{%url 'contact' %}">Contact</a></li>
+        <li><a href="{% url 'login' %}">Login</a></li>
+      </ul>
+    </nav>
+
+    <div class="content">
+      <h2>Home</h2>
+      <p>This is the home page of my colorful webpage.</p>
+      <p>Check out this colorful element:</p>
+      <div class="colorful">Colorful Element</div>
+    </div>
+  </div>
+</body>
+</html>

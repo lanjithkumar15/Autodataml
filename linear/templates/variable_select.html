@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Variable Selection</title>
+</head>
+<body>
+    <h1>Variable Selection</h1>
+    <form method="POST" action="/linear/variselect/">
+        {% csrf_token %}
+        <h3>Select Dependent Variable:</h3>
+        <select name="dependent_variable">
+            {% for column in column_names %}
+                <option value="{{ column }}">{{ column }}</option>
+            {% endfor %}
+        </select>
+
+        <h3>Select Independent Variables:</h3>
+        {% for column in column_names %}
+            <input type="checkbox" name="independent_variables" value="{{ column }}"> {{ column }}<br>
+        {% endfor %}
+
+        <h3>Select Regression Type:</h3>
+        <select name="regression_type">
+            <option value="simple">Simple Linear Regression</option>
+            <option value="multiple">Multiple Linear Regression</option>
+        </select>
+
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

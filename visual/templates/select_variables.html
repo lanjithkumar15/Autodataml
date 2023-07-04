@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Select Variables</title>
+</head>
+<body>
+    <h1>Select Variables</h1>
+
+    <form method="POST" action="{% url 'visual:visualize_data' %}">
+        {% csrf_token %}
+        <label for="variable1">Variable 1:</label>
+        <select name="variable1" id="variable1">
+            {% for column in columns %}
+                <option value="{{ column }}">{{ column }}</option>
+            {% endfor %}
+        </select>
+
+        <br>
+        <br>
+
+        <label for="variable2">Variable 2:</label>
+        <select name="variable2" id="variable2">
+            {% for column in columns %}
+                <option value="{{ column }}">{{ column }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <br>
+
+        <label for="chart_type">Chart Type:</label>
+        <select name="chart_type" id="chart_type">
+            <option value="line">Line Chart</option>
+            <option value="bar">Bar Chart</option>
+            <option value="pie">Pie Chart</option>
+            <option value="scatter">Scatter Plot</option>
+            <option value="histogram">Histogram</option>
+        </select>
+
+        <br>
+        <br>
+        <button type="submit">Generate Chart</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,40 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f1f1f1;
+  }
+
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+
+  h1 {
+    margin: 0;
+  }
+
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .content {
+    margin-top: 20px;
+  }
+
+  .colorful {
+    color: #fff;
+    background-color: #ff7f50;
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  .colorful:hover {
+    background-color: #ff6347;
+  }
